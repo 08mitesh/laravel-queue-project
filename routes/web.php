@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+//    (new \App\Jobs\testJob())->handle();
+    \App\Jobs\testJob::dispatch();
     return view('welcome');
 });
