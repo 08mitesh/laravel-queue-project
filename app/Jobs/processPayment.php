@@ -8,12 +8,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use phpDocumentor\Reflection\DocBlock\Tags\Throws;
 
-class testJob implements ShouldQueue
+class processPayment implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
 
     /**
      * Create a new job instance.
@@ -33,10 +31,5 @@ class testJob implements ShouldQueue
     public function handle()
     {
         //
-//        throw new \Exception('Failed');
-//
-        sleep(2);
-
-        info('hello');
     }
 }
