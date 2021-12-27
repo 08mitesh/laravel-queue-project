@@ -14,7 +14,10 @@ class testJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $tries = 10;
 
+    // job will be executed until exception reaches to the defined number
+    public $maxExceptions = 5;
     /**
      * Create a new job instance.
      *
@@ -33,10 +36,14 @@ class testJob implements ShouldQueue
     public function handle()
     {
         //
-//        throw new \Exception('Failed');
-//
+        throw new \Exception('Failed');
         sleep(2);
 
         info('hello');
+    }
+
+    // Any code which we want to execute after getting exception in the code
+    public function failed($e){
+        info('failed!');
     }
 }
