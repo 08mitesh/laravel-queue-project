@@ -103,5 +103,34 @@
                 </a>
             </li>
         </ul>
+        <ul>
+            <li>
+                <a href="#">
+                    <h2>
+                        $maxExceptions = 5;
+                    </h2>
+                    <p>
+                        This will all jobs to executed until count of exception reaches to the defined number and after the it will not
+                    </p>
+
+                    <h2>
+                        Is it possible to execute code even after exception?
+                    </h2>
+                    <p>
+
+                        yes,It is possible to execute the code after getting exception in the job.
+                        <br>
+                        <xmp>
+                        public function failed($e)
+                        {
+                            // Code needs to be executed
+                        }
+                        </xmp>
+                        <br>
+
+                    </p>
+                </a>
+            </li>
+        </ul>
     </body>
 </html>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    foreach (range(1,10) as $i)
+//    foreach (range(1,10) as $i)
         \App\Jobs\testJob::dispatch();
 
     \App\Jobs\processPayment::dispatch()->onQueue('payment');
